@@ -1,8 +1,9 @@
 #!/bin/bash
 cd $BUILD_DIR
+echo $BUILD_DIR
 git clone https://github.com/stedolan/jq.git
 cd jq
 autoreconf -i
 ./configure --enable-shared --prefix=$BUILD_DIR
 make
-make install
+make install DESTDIR=$BUILD_DIR
