@@ -13,4 +13,3 @@ export JQ_DIR=$CACHE_DIR
 echo "JQDIR"
 echo $JQ_DIR
 ls /app/tmp/cache/
-ls /app/tmp/cache/jq
