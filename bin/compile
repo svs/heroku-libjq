@@ -1,4 +1,5 @@
 #!/bin/bash
+cd BUILD_DIR
 git clone https://github.com/stedolan/jq.git
 cd jq
 autoreconf -i
