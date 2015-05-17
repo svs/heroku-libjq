@@ -1,11 +1,11 @@
 #!/bin/bash
 BUILD_DIR=$1
 CACHE_DIR=$2
-cd BUILD_DIR
-echo BUILD_DIR
+cd $BUILD_DIR
+echo $BUILD_DIR
 git clone https://github.com/stedolan/jq.git
 cd jq
 autoreconf -i
 ./configure --enable-shared
 make
-make install DESTDIR=BUILD_DIR
+make install DESTDIR=$BUILD_DIR
