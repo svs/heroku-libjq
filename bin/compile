@@ -16,4 +16,12 @@ cd jq
 autoreconf -i
 ./configure --enable-shared
 make
-make install DESTDIR=$BUILD_DIR
+make install DESTDIR=$CACHE_DIR
+export JQ_DIR=$CACHE_DIR
+echo "JQDIR"
+echo $JQ_DIR
+ls -R /app/tmp/cache/
+ls -R $CACHE_DIR
+
+
+env
