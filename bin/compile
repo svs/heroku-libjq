@@ -3,14 +3,17 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 cd $BUILD_DIR
 echo $BUILD_DIR
+ls -R $CACHE_DIR
+
+rm -f $CACHE_DIR/.bundle
+cp -v -R $BUILD_DIR/.heroku_bundle $BUILD_DIR/.bundle
+sed -i "s,/app,$BUILD_DIR,g" $BUILD_DIR/.bundle/config
+
+
+if [! -f /app/tmp/cache/
 git clone https://github.com/stedolan/jq.git
 cd jq
 autoreconf -i
 ./configure --enable-shared
 make
-make install DESTDIR=$CACHE_DIR
-export JQ_DIR=$CACHE_DIR
-echo "JQDIR"
-echo $JQ_DIR
-ls -R /app/tmp/cache/
-ls -R $CACHE_DIR
+make install DESTDIR=$BUILD_DIR
