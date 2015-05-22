@@ -16,4 +16,4 @@ autoreconf -i
 make
 make install DESTDIR=$BUILD_DIR
 
-ls -R /app/vendor
+find / -name \*jq\* -print
