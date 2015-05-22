@@ -3,7 +3,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 cd $BUILD_DIR
 echo $BUILD_DIR
-ls -R $CACHE_DIR
+echo $CACHE_DIR
 
 rm -f $CACHE_DIR/.bundle
 cp -v -R $BUILD_DIR/.heroku_bundle $BUILD_DIR/.bundle
