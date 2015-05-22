@@ -5,9 +5,6 @@ cd $BUILD_DIR
 echo $BUILD_DIR
 echo $CACHE_DIR
 
-cp -v -R $BUILD_DIR/.heroku_bundle $BUILD_DIR/.bundle
-sed -i "s,/app,$BUILD_DIR,g" $BUILD_DIR/.bundle/config
-
 
 git clone https://github.com/stedolan/jq.git
 cd jq
@@ -16,4 +13,13 @@ autoreconf -i
 make
 make install DESTDIR=$CACHE_DIR
 
+export JD=$CACHE_DIR
+
+echo "============BUILD======================"
+ls -R $BUILD_DIR
+
+echo "============CACHE======================"
+ls -R $CACHE_DIR
+
+echo "============FIND======================"
 find /app -name \*jq\* -print
