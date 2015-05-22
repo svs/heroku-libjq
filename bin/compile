@@ -11,7 +11,7 @@ cd jq
 autoreconf -i
 ./configure --enable-shared
 make
-make install DESTDIR=$CACHE_DIR
+make install
 
 export JD=$CACHE_DIR
 
@@ -23,3 +23,5 @@ ls -R $CACHE_DIR
 
 echo "============FIND======================"
 find /app -name \*jq\* -print
+
+export LD_LIBRARY_PATH=/app/jq/.libs/
