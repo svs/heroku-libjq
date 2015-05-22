@@ -14,6 +14,6 @@ cd jq
 autoreconf -i
 ./configure --enable-shared
 make
-make install DESTDIR=$BUILD_DIR
+make install DESTDIR=$CACHE_DIR
 
-find / -name \*jq\* -print
+find /app -name \*jq\* -print
