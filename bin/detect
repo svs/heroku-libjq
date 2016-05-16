@@ -1,3 +1,5 @@
 #!/bin/bash
 
+# Nothing to detect, just agree
+echo "jq"
 exit 0
